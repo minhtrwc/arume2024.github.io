@@ -37,10 +37,11 @@
   .about-main {
     border-radius: 11px;
     border: 2px solid #E0E6ED;
-    box-shadow: 0px 7px 14px 0px #FF000C66;
+    box-shadow: 0px 4px 7px 0px #f0495266;
   }
   .menu-item-selected {
-    font-weight: bold;
+    font-weight: 600;
+    font-size: medium;
     color: black;
   }
   .content-display {
@@ -68,7 +69,6 @@
   h3 {
     font-weight: 500 !important;
     font-size: xx-large;
-    margin-bottom: 2rem; 
     padding-left: 1rem;
   }
 
@@ -88,26 +88,54 @@
     padding-bottom: 2rem;
   }
 
+  .content-display {
+    margin-top: 4rem;
+  }
+  
+  .img-fluid {
+    width: 28vw !important;
+    margin-top: -80px;
+    margin-bottom: 15px !important;
+  }
+
   @media screen and (max-width: 576px) {
       .about-main {
         width: 80%;
         margin-left: 2.5rem;
       }
       .menu-left-panel {
-        width: 100% !important;
-        border-right: 0px !important;
-        border-bottom: 1px solid #dee2e6 !important;
+        display: none;
       }
       .img-fluid {
         scale: 2 !important;
-        margin-left: 2rem !important;
+        padding-bottom: 1rem;
+        margin-top: 7vh;
+        margin-left: 15vw !important;
       }
+
       .button-left {
         padding-left: 0rem !important;
       }
+
+      .content-area {
+        margin: 0px !important;
+      }
+
+      .content-display {
+        text-align: center;
+        padding-left: 0px !important;
+      }
+
+      h3 {
+        padding-left: 0px !important;
+      }
+
+      .right-panel {
+        width: 100%;
+      }
   }
 
-  @media screen and (min-width: 577px) and (max-width: 768px) {
+  @media screen and (min-width: 577px) and (max-width: 767px) {
     .about-main {
         width: 90%;
         margin-left: 2.5rem;
@@ -125,14 +153,60 @@
         scale: 0.8;
         margin-left: -1.5rem;
       }
-  }
-  
 
-  @media screen and (min-width: 769px) {
-    .about-main {
-        width: 95%;
-        margin-left: 2rem;
+      .content-display {
+        text-align: center;
+        padding-left: 0px !important;
+        margin-top: 0px !important;
       }
+
+      h3 {
+        padding-left: 0px !important;
+      }
+
+      .right-panel {
+        width: 100%;
+      }
+      .menu-left-panel {
+        display: none;
+      }
+
+      .img-fluid {
+        scale: 1.5 !important;
+        padding-bottom: 1rem;
+        margin-top: 4vh;
+        margin-left: 10vw !important;
+      }
+  }
+
+  @media screen and (min-width: 768px)  and (max-width: 1023px)  {
+    .about-main {
+        width: 90%;
+        margin-left: 2.5rem;
+    }
+    .img-fluid {
+      padding-bottom: 1.1rem !important;
+      margin-bottom: 1rem !important;
+    }
+
+    .content-display {
+      text-align: left;
+      padding-left: 0px !important;
+    }
+  }
+
+  @media screen and (min-width: 1024px)  and (max-width: 1599px) {
+    .about-main {
+        width: 80%;
+        margin-left: 10vw;
+    }
+    .img-fluid {
+      padding-bottom: 1.1rem !important;
+    }
+
+    .content-display {
+        text-align: left;
+    }
   }
 
 </style>
@@ -170,20 +244,20 @@
             <!-- Menu -->
             <div class="col-2 menu-left-panel">
               <div class="border-bottom" style="padding-bottom: 1rem;">
-                <p style="color:#FF000C; font-weight: 600; padding-bottom: 1rem;">About ARUME</p>
+                <p style="color:#FF000C; font-weight: 500; padding-bottom: 1rem;">About ARUME</p>
                 <p id="menu_who" class="menu-item-selected button button_who">Who We Are</p>
                 <p id="menu_mission" class="button button_mission">Our Mission</p>
                 <p id="menu_why" class="button button_why">Why Now?</p>
               </div>
               <div>
-                <p style="color:#FF000C; font-weight: 600; padding-top: 0.3rem; padding-bottom: 1rem;">Get Involved</p>
+                <p style="color:#FF000C; font-weight: 500; padding-top: 0.3rem; padding-bottom: 1rem;">Get Involved</p>
                 <p id="menu_sponsorship" class="button button_sponsorship">Sponsorship</p>
-                <p id="menu_participate" class="button button_participate">Participate</p>
+                <p id="menu_participate" class="button button_participate">Participation</p>
                 <p id="menu_advertising" class="button button_advertising" style="padding-bottom: 5rem;">Advertising</p>
               </div>
             </div>
             <!-- Content -->
-            <div class="col-10">
+            <div class="col-10 right-panel">
               <div id="content_who" class="content-display" style="padding-left: 1rem">
                 <div class="row" style="align-items: flex-end; padding-top: 1rem;">
                   <div class="col-md-5">
@@ -191,7 +265,7 @@
                   </div>
                   <div class="col-2"></div>
                   <div class="col-4" style="text-align: center;">
-                    <img class="img-fluid" src="./files/logo.svg" style="scale: 0.9; margin-bottom: 2rem; ">
+                    <img class="img-fluid" src="./files/logo.svg">
                   </div>
                 </div>
                 
@@ -213,7 +287,7 @@
                   </div>
                   <div class="col-2"></div>
                   <div class="col-4" style="text-align: center;">
-                    <img class="img-fluid" src="./files/mission.gif" style="scale: 0.9; margin-bottom: 2rem; ">
+                    <img class="img-fluid" src="./files/mission.gif">
                   </div>
                 </div>
                 
@@ -230,11 +304,11 @@
               <div id="content_why" class="content-not-display" style="padding-left: 1rem">
                 <div class="row" style="align-items: flex-end; padding-top: 1rem;">
                   <div class="col-md-5">
-                    <h3>Why Now ?</h3>
+                    <h3>Why Now?</h3>
                   </div>
                   <div class="col-2"></div>
                   <div class="col-4" style="text-align: center;">
-                    <img class="img-fluid" src="./files/why.gif" style="scale: 0.9; margin-bottom: 2rem; ">
+                    <img class="img-fluid" src="./files/why.gif">
                   </div>
                 </div>
                 
@@ -294,7 +368,7 @@
                   <p style="margin-top: 1rem; color: #FF000C;">Email <a style="color: #FF000C;" href="mailto:ads@arume.org">ads@arume.org</a> for rates and packages.</p>
                 </div>
                 
-                <p class="button button_participate redirect-btn" style="padding-bottom: 2rem; padding-left: 1rem;">Participate</p>   
+                <p class="button button_participate redirect-btn" style="padding-bottom: 2rem; padding-left: 1rem;">Participation</p>   
               </div>
 
             </div>
