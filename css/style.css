@@ -3724,6 +3724,7 @@ a:focus,
   .carousel .card {
 	margin: 0 0.5em;
 	border: 0;
+  	height: 100%;
   }
   
   .carousel-control-prev,
@@ -3737,7 +3738,7 @@ a:focus,
   }
 
 
-.cardrow img {
+.card img {
 	width: 70px;
 	max-height: 70px;
 	border-radius: 50%;

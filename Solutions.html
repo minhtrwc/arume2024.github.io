@@ -1,476 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <meta name="author" content="TSA Team" />
+        <meta name="generator" content="TSA" />
+        <title>ARUME project</title>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="TSA Team">
-  <meta name="generator" content="TSA">
-  <title>ARUME project</title>
+        <!-- Bootstrap core CSS -->
+        <link href="./files/bootstrap.min.css" rel="stylesheet" />
+        <link href="./css/header.css" rel="stylesheet" />
+        <script src="./script/jquery-3.7.1.min"></script>
+        <script src="./script/bootstrap.js"></script>
 
-  <!-- Bootstrap core CSS -->
-  <link href="./files/bootstrap.min.css" rel="stylesheet">
-  <link href="./css/header.css" rel="stylesheet">
-  <script src="./script/jquery-3.7.1.min"></script>
-  <script src="./script/bootstrap.js"></script>
+        <meta name="theme-color" content="#7952b3" />
 
-  <meta name="theme-color" content="#7952b3">
+        <style>
+            footer p {
+                margin: 0px;
+                font-size: 16px;
+            }
 
-  <style>
-    footer p {
-      margin: 0px;
-      font-size: 16px;
-    }
+            body {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+            .content {
+                flex: 1;
 
-    .content {
-      flex: 1;
+                p {
+                    padding-bottom: 0.5rem;
+                }
+            }
+            .big-text-inside-image {
+                /* font-size: 96px; */
+                font-size: 6.7vw;
+                font-weight: 700;
+                /* line-height: 96px; */
+                line-height: 6.7vw;
+                letter-spacing: -0.02em;
+                text-align: left;
+                color: #181818;
+            }
+            .content-top-text {
+                margin-left: 12%;
+                /* margin-top: 34px; */
+                margin-top: 2.4vw;
+                /* padding-top: 55px; */
+                padding-top: 4.33vw;
+            }
+            .footer {
+                background-color: #f5f5f5;
+                text-align: center;
+                padding: 10px 0;
+            }
 
-      p {
-        padding-bottom: 0.5rem;
-      }
-    }
+            .menu-item-selected {
+                font-weight: bold;
+                color: black;
+            }
 
-    .footer {
-      background-color: #f5f5f5;
-      text-align: center;
-      padding: 10px 0;
-    }
+            .content-top-title {
+                padding-left: 8%;
+                /* font-size: 96px; */
+                font-size: 6.78vw;
+                font-weight: 700;
+                /* line-height: 96px; */
+                line-height: 6.78vw;
+                letter-spacing: -0.02em;
+                text-align: left;
+                /* padding-top: 60px; */
+                padding-top: 11vw;
+                /* padding-bottom: 40px; */
+                padding-bottom: 2.8vw;
 
-    .menu-item-selected {
-      font-weight: bold;
-      color: black;
-    }
+                p {
+                    margin-bottom: 0px;
+                }
+            }
 
-    .content-top-title {
-      padding-left: 8%;
-      /* font-size: 96px; */
-      font-size: 6.78vw;
-      font-weight: 700;
-      /* line-height: 96px; */
-      line-height: 6.78vw;
-      letter-spacing: -0.02em;
-      text-align: left;
-      /* padding-top: 60px; */
-      padding-top: 11vw;
-      /* padding-bottom: 40px; */
-      padding-bottom: 2.8vw;
+            .row-background {
+                background-image: url("./files/sub-header.png");
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                width: 100%;
+                /* height: 700px; */
+                height: 38vw;
+                background-size: cover;
+                margin-top: 82px !important;
+            }
+            .content-top-image {
+                background-image: url("./files/sub-header.png");
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 38vw;
+                background-size: cover;
+            }
+            .content-top-content {
+                padding-left: 8%;
+                /* font-size: 24px; */
+                font-size: 1.69vw;
+                font-weight: 400;
+                /* line-height: 28px; */
+                line-height: 1.97vw;
+                letter-spacing: 0em;
+                text-align: left;
 
-      p {
-        margin-bottom: 0px;
-      }
-    }
+                p {
+                    margin-bottom: 0px;
+                }
+            }
+            .small-text-inside-image {
+                /* font-size: 18px; */
+                font-size: 1.26vw;
+                font-weight: 300;
+                /* line-height: 28px; */
+                line-height: 1.97vw;
+                letter-spacing: 0em;
+                text-align: left;
+                margin-top: 1.6vw !important;
+                margin-bottom: 0.2vw;
+            }
 
-    .content-top-content {
-      padding-left: 8%;
-      /* font-size: 24px; */
-      font-size: 1.69vw;
-      font-weight: 400;
-      /* line-height: 28px; */
-      line-height: 1.97vw;
-      letter-spacing: 0em;
-      text-align: left;
+            .logo-img {
+                height: 48.4px;
+            }
 
-      p {
-        margin-bottom: 0px;
-      }
-    }
+            li {
+                margin-bottom: 2rem;
+                font-weight: 600;
+                text-decoration: underline;
+            }
 
-    .row-background {
-      background-image: url('./files/sub-header.png');
-      background-size: auto 100%;
-      background-repeat: no-repeat;
-      width: 100%;
-      /* height: 700px; */
-      height: 49.5vw;
-      margin-top: 82px !important;
-    }
+            .menu-left-panel {
+                height: fit-content;
+                padding: 3px !important;
+                border-right: 1px solid #dee2e6 !important;
+                position: sticky;
+                top: 90px;
+                padding-bottom: 8rem !important;
+            }
 
-    .logo-img {
-      height: 48.4px;
-    }
+            @media screen and (max-width: 576px) {
+                .row-background {
+                    scale: 1.2 !important;
+                }
+                .content-top-text {
+                    margin-left: 5%;
+                }
+                .big-text-inside-image {
+                    font-size: 27px;
+                    line-height: 27px;
+                }
+                .small-text-inside-image {
+                    font-size: 7px;
+                    line-height: 7px;
+                }
 
-    li {
-      margin-bottom: 2rem;
-      font-weight: 600;
-      text-decoration: underline;
-    }
+                .menu-left-panel {
+                    width: 80% !important;
+                    border-right: 0px !important;
+                    border-bottom: 1px solid #dee2e6 !important;
+                    margin-bottom: 2rem;
+                    position: relative !important;
+                    top: 0px !important;
+                    padding-bottom: 1rem !important;
+                }
 
-    .menu-left-panel {
-      height: fit-content; 
-      padding: 3px !important;
-      border-right: 1px solid #dee2e6 !important;
-      position:sticky; 
-      top: 90px; 
-      padding-bottom: 8rem !important;
-    }
+                nav {
+                    scale: 0.85;
+                    width: 115% !important;
+                    margin-left: -50px !important;
+                }
 
-    @media screen and (max-width: 576px) {
-      .row-background {
-          scale: 1.2 !important;
-      }
+                .content-top-title {
+                    margin-left: 1rem;
+                }
 
-      .menu-left-panel {
-        width: 80% !important;
-        border-right: 0px !important;
-        border-bottom: 1px solid #dee2e6 !important;
-        margin-bottom: 2rem;
-        position: relative !important;
-        top: 0px !important;
-        padding-bottom: 1rem !important;
-      }
+                .content-top-content {
+                    margin-left: 1rem;
+                    font-size: small;
+                }
 
-      nav {
-        scale: 0.85;
-        width: 115% !important;
-        margin-left: -50px !important;
-      }
+                p {
+                    line-height: normal;
+                }
+            }
 
-      .content-top-title {
-        margin-left: 1rem;
-      }
+            @media screen and (min-width: 577px) and (max-width: 768px) {
+                nav {
+                    scale: 0.75;
+                    width: 125% !important;
+                    margin-left: -120px !important;
+                }
 
-      .content-top-content {
-        margin-left: 1rem;
-        font-size: small;
-      }
+                .menu-left-panel {
+                    width: 80% !important;
+                    border-right: 0px !important;
+                    border-bottom: 1px solid #dee2e6 !important;
+                    margin-bottom: 2rem;
+                    position: relative !important;
+                    top: 0px !important;
+                    padding-bottom: 1rem !important;
+                }
+                .content-top-text {
+                    margin-left: 7%;
+                }
+                .content-top-title {
+                    margin-left: 1rem;
+                }
 
-      p {
-        line-height: normal;
-      }
-    }
+                .content-top-content {
+                    margin-left: 1rem;
+                }
 
-    @media screen and (min-width: 577px) and (max-width: 767px) {
-      nav {
-        scale: 0.75;
-        width: 125% !important;
-        margin-left: -120px !important;
-      }
-      
-      .menu-left-panel {
-        width: 80% !important;
-        border-right: 0px !important;
-        border-bottom: 1px solid #dee2e6 !important;
-        margin-bottom: 2rem;
-        position: relative !important;
-        top: 0px !important;
-        padding-bottom: 1rem !important;
-      }
+                p {
+                    line-height: normal;
+                }
 
-      .content-top-title {
-        margin-left: 1rem;
-      }
+                .logo-img {
+                    scale: 0.7;
+                }
+            }
 
-      .content-top-content {
-        margin-left: 1rem;
-      }
+            @media screen and (min-width: 768px) and (max-width: 1023px) {
+                nav {
+                    margin-left: 0px !important;
+                }
 
-      p {
-        line-height: normal;
-      }
+                .menu-left-panel {
+                    width: 80% !important;
+                    border-right: 0px !important;
+                    border-bottom: 1px solid #dee2e6 !important;
+                    margin-bottom: 2rem;
+                    position: relative !important;
+                    top: 0px !important;
+                    padding-bottom: 1rem !important;
+                }
 
-      .logo-img {
-        scale: 0.7;
-      }
-    }
+                .btn-danger {
+                    scale: 0.7;
+                }
 
-    @media screen and (min-width: 768px)  and (max-width: 1023px) {
-      nav {
-        margin-left: 0px !important;
-      }
-      
-      .menu-left-panel {
-        width: 80% !important;
-        border-right: 0px !important;
-        border-bottom: 1px solid #dee2e6 !important;
-        margin-bottom: 2rem;
-        position: relative !important;
-        top: 0px !important;
-        padding-bottom: 1rem !important;
-      }
+                .company-icon {
+                    padding-left: 1%;
+                    scale: 0.7;
+                }
 
-      .btn-danger {
-        scale: 0.7;
-      }
+                .nav-link {
+                    padding-left: 5px !important;
+                    padding-right: 5px !important;
+                    font-size: 12px !important;
+                }
 
-      .company-icon {
-        padding-left: 1%;
-        scale: 0.7;
-      }
+                .justify-content-end {
+                    justify-content: flex-start !important;
+                }
+            }
+        </style>
+    </head>
 
-      .nav-link {
-        padding-left: 5px !important;
-        padding-right: 5px !important;
-        font-size: 12px !important;
-      }
-
-      .justify-content-end {
-        justify-content: flex-start !important;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-md navbar-light fixed-top">
-    <a class="company-icon" href="./Home.html">
-      <img class="logo-img d-none d-sm-block" src="./files/trade-mark.svg">
-      <img class="logo-img d-block d-sm-none" src="./files/logo.svg">
-    </a>
-    <button type="button" class="btn btn-danger me-2 py-2 report-button report-button-xs d-block d-md-none"
-      onclick="location.href = './Report.html'">
-      Report
-    </button>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Vulnerability.html">VULNERABILITY</a>
-      <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Solutions.html">SOLUTIONS</a>
-      <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Articles.html">ARTICLES</a>
-      <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./About.html">ABOUT</a>
-      <button type="button" class="btn btn-danger me-2 py-2 report-button d-none d-md-block"
-        onclick="location.href = './Report.html'">
-        Report
-      </button>
-    </div>
-  </nav>
-
-  <main>
-    <div class="row-background">
-      <div class="text-white content-top-title">
-        <p>Solutions for Defense </p>
-      </div>
-      <div class="text-white content-top-content">
-        <p>Ongoing vulnerability assessments and multi-layered</p>
-        <p>protections will help secure critical infrastructure from</p>
-        <p>malicious attacks. Learn more about the kinds of</p>
-        <p>solutions to defend systems</p>
-      </div>
-    </div>
-    <div class="container" style="padding-top: 90px; padding-bottom: 40px;">
-      <div class="row">
-        <div class="menu-left-panel col-1">
-          <p id="vulnerability-prevention-button" style="margin-bottom: 32px;">
-            <a href="#section-vulnerability-prevention" style="text-decoration: none;color: inherit;">
-              Vulnerability Prevention
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top">
+            <a class="company-icon" href="./Home.html">
+                <img class="logo-img d-none d-sm-block" src="./files/trade-mark.svg" />
+                <img class="logo-img d-block d-sm-none" src="./files/logo.svg" />
             </a>
-          </p>
-          <p id="weak-solutions-button" style="margin-bottom: 32px;">
-            <a href="#section-weak-solutions" style="text-decoration: none;color: inherit;">
-              Weak Solutions
-            </a>
-          </p>
-          <p id="strong-solutions-button" style="margin-bottom: 32px;">
-            <a href="#section-strong-solutions" style="text-decoration: none;color: inherit;">
-              Strong Solutions
-            </a>
-          </p>
-          <p id="conclusion-button" style="margin-bottom: 32px;">
-            <a href="#section-conclusion" style="text-decoration: none;color: inherit;">
-              Conclusion
-            </a>
-          </p>
-          <p id="links-button" style="margin-bottom: 32px;">
-            <a href="#section-links" style="text-decoration: none;color: inherit;">
-              Links
-            </a>
-          </p>
-        </div>
-        <div class="col-11 px-lg-5">
-          <div class="row">
-            <div class="content col-sm-10" style="font-size: 20px; font-weight: 400;color: #181818; padding-left: 40px;">
-              <p id="section-vulnerability-prevention" style="font-size: 32px; font-weight: 700;">Vulnerability Prevention</p>
-              <p>While cyber defenses are crucial to mitigate attacks, the most effective approach is preventing
-                vulnerabilities before they can be exploited.</p>
-              <p>Vigilance is needed to identify and fix defects or design flaws early. Many common exploitation techniques
-                can be made far more difficult, limiting opportunities for threat actors and making systems more resilient
-                over the long run. Prioritizing strong and secure solutions will help protect your business and our critical
-                infrastructure for the long run.</p>
-              <br>
-              <p id="section-weak-solutions" style="font-size: 32px;font-weight: 700;">Weak Solutions</p>
-              <br>
-              <b>Employee Training</b>
-              <br>
-              Overview: Educate all users to recognize phishing attempts and prevent social engineering attacks.
-              <div style="display: flex;">
-                <i> Effectiveness -&nbsp</i>
-                <p style="color: #FF000C; margin-bottom: 0px !important;">2/10</p>
-              </div>
-              <br>
-              <b>Two-Factor Authentication</b>
-              <br>
-              Overview: Require a secondary check like a code text/email in addition to passwords for remote access.
-              <br>
-              <div style="display: flex;">
-                <i> Effectiveness -&nbsp</i>
-                <p style="color: #FF000C;">2/10</p>
-              </div>
-              <br>
-              <b>Restrict Unknown IP Addresses</b>
-              <br>
-              Overview: Block access attempts from IP addresses not on an approved whitelist to prevent unauthorized
-              remote access from unknown locations. Only IP addresses associated with known legitimate remote access
-              points would be allowed to connect.
-              <br>
-              <div style="display: flex;">
-                <i> Effectiveness -&nbsp</i>
-                <p style="color: #FF000C;">2/10</p>
-              </div>
-              <br>
-              <b>Strong Password Policies</b>
-              <br>
-              Overview: Require complex, unique passwords that are regularly changed to prevent brute force or credential
-              theft attacks.
-              <br>
-              <div style="display: flex;">
-                <i> Effectiveness -&nbsp</i>
-                <p style="color: #FF000C;">3/10</p>
-              </div>
-              <br>
-              Firewalls
-              Overview: Use network firewalls to filter and monitor incoming and outgoing traffic, blocking unauthorized
-              access attempts.
-              Effectiveness - 4/10
-              Also Read: Why Firewalls aren’t enough to protect against evolving cyber threats
-              <br>
-              <br>
-              <b>VPNs</b>
-              <br>
-              Overview: Require use of a VPN with multi-factor authentication for any remote access rather than exposing
-              systems directly.
-              <br>
-              <div style="display: flex;">
-                <i> Effectiveness -&nbsp</i>
-                <p style="color: #FF000C;">5/10</p>
-              </div>
-              <br>
-              <br>
-              </p>
-              <p id="section-strong-solutions" style="font-size: 32px;font-weight: 700;">Stronger Solutions</p>
-              <br>
-              <br>
-              <b>Remove TCP/IP Cards</b>
-              <br>
-              Overview: Eliminates remote access vulnerability. By removing public network connectivity, it prevents threats
-              <br>
-              <div style="display: flex;">
-                <i> Effectiveness -&nbsp</i>
-                <p style="color: #4ECB71;">6/10</p>
-              </div>
-              <br>
-              Also Read: <u>Thousands of U.S. Gas Stations Vulnerable to Cyber attacks</u>
-              <br>
-              <br>
-              <b><u>Kachoolie</u></b>
-              <br>
-              Overview: Installing Kachoolie eliminates the need for a static IP address and router removing the vulnerable
-              causes of many cyberattacks to ATGs,
-              <br>
-              <div style="display: flex;">
-                <i> Effectiveness -&nbsp</i>
-                <p style="color: #4ECB71;">9/10</p>
-              </div>
-              <br>
-              <b><u>LockDown™ </u></b>
-              <br>
-              Overview:
-              <br>
-              <br>
-              <div style="display: flex;">
-                <i> Effectiveness -&nbsp</i>
-                <p style="color: #4ECB71;">9/10</p>
-              </div>
-              <br>
-              <br>
-              <p id="section-conclusion" style="font-size: 32px;font-weight: 700;">Conclusion</p>
-              <br>
-              By implementing multiple layers of defense-in-depth protections like these, automatic tank gauge systems can
-              be better safeguarded against the evolving cyber threats targeted at vulnerabilities. A combination of
-              technical, administrative and physical security controls helps create a robust security posture.
-              <br>
-              <br>
-              <p id="section-links" style="font-size: 32px;font-weight: 700;">Links</p>
-              <ul>
-                <li>Defense-in-Depth Report on Cybersecurity</li>
-                <li>Vulnerability & Exploit Database</li>
-                <li>Vulnerability Questionnaire</li>
-              </ul>
+            <button type="button" class="btn btn-danger me-2 py-2 report-button report-button-xs d-block d-md-none" onclick="location.href = './Report.html'">
+                Report
+            </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Vulnerability.html">VULNERABILITY</a>
+                <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Solutions.html">SOLUTIONS</a>
+                <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Articles.html">ARTICLES</a>
+                <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./About.html">ABOUT</a>
+                <button type="button" class="btn btn-danger me-2 py-2 report-button d-none d-md-block" onclick="location.href = './Report.html'">
+                    Report
+                </button>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
+        </nav>
 
-  <footer id="footer" style="display: block; width: 100%" class="footer-bs bg-dark text-white">
-    <div class="container" style="padding-top: 10px; padding-bottom: 10px;">
-      <div class="row">
-        <div class="col-12 col-sm-7">
-          <div class="row">
-            <div class="col-sm-6 col-md-5" style="padding-left: 20px;">
-              <p style="font-size: 24; font-weight: 500;">ARUME</p>
-              <p style="font-weight: 600;">Contact us</p>
-              <a href="mailto:support@arume.org">support@arume.org</a>
+        <main class="content">
+            <div class="content-top-image">
+                <div class="lh-1 content-top-text">
+                    <div class="page-title-top-padding" style="height: 8.5vh;"></div>
+                    <b class="text-white big-text-inside-image">Solutions for Defense</b>
+                    <p class="text-white lh-base mt-4 small-text-inside-image">
+                        Ongoing vulnerability assessments and multi-layered <br />
+                        protections will help secure critical infrastructure from <br />
+                        malicious attacks. Learn more about the kinds of <br />
+                        solutions to defend systems
+                    </p>
+                </div>
             </div>
-            <div class="col-sm-6 col-md-7" style="padding-left: 20px;">
-              <br>
-              <br>
-              <p>
-                <a class="text-decoration-none" style="color: #FF000C;" href="./Report.html">Report Attack</a>
-              </p>
-              <p>
-                <a class="text-decoration-none text-white" href="./Vulnerability.html">Station Vulnerability</a>
-              </p>
-              <p>Centro comercial Moctezuma</p>
-              <p>
-                <a class="text-decoration-none text-white" href="./Articles.html">Articles</a>
-              </p>
-              <p>Disclaimer</p>
-              <p>
-                <a class="text-decoration-none text-white" href="./Term.html">T&amp;Cs</a>
-              </p>
-              <br>
+            <div class="container" style="padding-top: 90px; padding-bottom: 40px;">
+                <div class="row">
+                    <div class="menu-left-panel col-1">
+                        <p id="vulnerability-prevention-button" style="margin-bottom: 32px;">
+                            <a href="#section-vulnerability-prevention" style="text-decoration: none; color: inherit;">
+                                Vulnerability Prevention
+                            </a>
+                        </p>
+                        <p id="weak-solutions-button" style="margin-bottom: 32px;">
+                            <a href="#section-weak-solutions" style="text-decoration: none; color: inherit;">
+                                Weak Solutions
+                            </a>
+                        </p>
+                        <p id="strong-solutions-button" style="margin-bottom: 32px;">
+                            <a href="#section-strong-solutions" style="text-decoration: none; color: inherit;">
+                                Strong Solutions
+                            </a>
+                        </p>
+                        <p id="conclusion-button" style="margin-bottom: 32px;">
+                            <a href="#section-conclusion" style="text-decoration: none; color: inherit;">
+                                Conclusion
+                            </a>
+                        </p>
+                        <p id="links-button" style="margin-bottom: 32px;">
+                            <a href="#section-links" style="text-decoration: none; color: inherit;">
+                                Links
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-11 px-lg-5">
+                        <div class="row">
+                            <div class="content col-sm-10" style="font-size: 20px; font-weight: 400; color: #181818; padding-left: 40px;">
+                                <p id="section-vulnerability-prevention" style="font-size: 32px; font-weight: 700;">Vulnerability Prevention</p>
+                                <p>While cyber defenses are crucial to mitigate attacks, the most effective approach is preventing vulnerabilities before they can be exploited.</p>
+                                <p>
+                                    Vigilance is needed to identify and fix defects or design flaws early. Many common exploitation techniques can be made far more difficult, limiting opportunities for threat actors and making systems more
+                                    resilient over the long run. Prioritizing strong and secure solutions will help protect your business and our critical infrastructure for the long run.
+                                </p>
+                                <br />
+                                <p id="section-weak-solutions" style="font-size: 32px; font-weight: 700;">Weak Solutions</p>
+                                <br />
+                                <b>Employee Training</b>
+                                <br />
+                                Overview: Educate all users to recognize phishing attempts and prevent social engineering attacks.
+                                <div style="display: flex;">
+                                    <i> Effectiveness -&nbsp</i>
+                                    <p style="color: #ff000c; margin-bottom: 0px !important;">2/10</p>
+                                </div>
+                                <br />
+                                <b>Two-Factor Authentication</b>
+                                <br />
+                                Overview: Require a secondary check like a code text/email in addition to passwords for remote access.
+                                <br />
+                                <div style="display: flex;">
+                                    <i> Effectiveness -&nbsp</i>
+                                    <p style="color: #ff000c;">2/10</p>
+                                </div>
+                                <br />
+                                <b>Restrict Unknown IP Addresses</b>
+                                <br />
+                                Overview: Block access attempts from IP addresses not on an approved whitelist to prevent unauthorized remote access from unknown locations. Only IP addresses associated with known legitimate remote access
+                                points would be allowed to connect.
+                                <br />
+                                <div style="display: flex;">
+                                    <i> Effectiveness -&nbsp</i>
+                                    <p style="color: #ff000c;">2/10</p>
+                                </div>
+                                <br />
+                                <b>Strong Password Policies</b>
+                                <br />
+                                Overview: Require complex, unique passwords that are regularly changed to prevent brute force or credential theft attacks.
+                                <br />
+                                <div style="display: flex;">
+                                    <i> Effectiveness -&nbsp</i>
+                                    <p style="color: #ff000c;">3/10</p>
+                                </div>
+                                <br />
+                                Firewalls Overview: Use network firewalls to filter and monitor incoming and outgoing traffic, blocking unauthorized access attempts. Effectiveness - 4/10 Also Read: Why Firewalls aren’t enough to protect
+                                against evolving cyber threats
+                                <br />
+                                <br />
+                                <b>VPNs</b>
+                                <br />
+                                Overview: Require use of a VPN with multi-factor authentication for any remote access rather than exposing systems directly.
+                                <br />
+                                <div style="display: flex;">
+                                    <i> Effectiveness -&nbsp</i>
+                                    <p style="color: #ff000c;">5/10</p>
+                                </div>
+                                <br />
+                                <br />
+                                <p id="section-strong-solutions" style="font-size: 32px; font-weight: 700;">Stronger Solutions</p>
+                                <br />
+                                <br />
+                                <b>Remove TCP/IP Cards</b>
+                                <br />
+                                Overview: Eliminates remote access vulnerability. By removing public network connectivity, it prevents threats
+                                <br />
+                                <div style="display: flex;">
+                                    <i> Effectiveness -&nbsp</i>
+                                    <p style="color: #4ecb71;">6/10</p>
+                                </div>
+                                <br />
+                                Also Read: <u>Thousands of U.S. Gas Stations Vulnerable to Cyber attacks</u>
+                                <br />
+                                <br />
+                                <b><u>Kachoolie</u></b>
+                                <br />
+                                Overview: Installing Kachoolie eliminates the need for a static IP address and router removing the vulnerable causes of many cyberattacks to ATGs,
+                                <br />
+                                <div style="display: flex;">
+                                    <i> Effectiveness -&nbsp</i>
+                                    <p style="color: #4ecb71;">9/10</p>
+                                </div>
+                                <br />
+                                <b><u>LockDown™ </u></b>
+                                <br />
+                                Overview:
+                                <br />
+                                <br />
+                                <div style="display: flex;">
+                                    <i> Effectiveness -&nbsp</i>
+                                    <p style="color: #4ecb71;">9/10</p>
+                                </div>
+                                <br />
+                                <br />
+                                <p id="section-conclusion" style="font-size: 32px; font-weight: 700;">Conclusion</p>
+                                <br />
+                                By implementing multiple layers of defense-in-depth protections like these, automatic tank gauge systems can be better safeguarded against the evolving cyber threats targeted at vulnerabilities. A combination
+                                of technical, administrative and physical security controls helps create a robust security posture.
+                                <br />
+                                <br />
+                                <p id="section-links" style="font-size: 32px; font-weight: 700;">Links</p>
+                                <ul>
+                                    <li>Defense-in-Depth Report on Cybersecurity</li>
+                                    <li>Vulnerability & Exploit Database</li>
+                                    <li>Vulnerability Questionnaire</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-5" style="display: flex;align-self: flex-end; padding-left: 20px;">
-          <p>ARUME © 2024. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-</body>
+        </main>
 
+        <footer id="footer" style="display: block; width: 100%;" class="footer-bs bg-dark text-white">
+            <div class="container" style="padding-top: 10px; padding-bottom: 10px;">
+                <div class="row">
+                    <div class="col-12 col-sm-7">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-5" style="padding-left: 20px;">
+                                <p style="font-size: 24; font-weight: 500;">ARUME</p>
+                                <p style="font-weight: 600;">Contact us</p>
+                                <a href="mailto:support@arume.org">support@arume.org</a>
+                            </div>
+                            <div class="col-sm-6 col-md-7" style="padding-left: 20px;">
+                                <br />
+                                <br />
+                                <p>
+                                    <a class="text-decoration-none" style="color: #ff000c;" href="./Report.html">Report Attack</a>
+                                </p>
+                                <p>
+                                    <a class="text-decoration-none text-white" href="./Vulnerability.html">Station Vulnerability</a>
+                                </p>
+                                <p>Centro comercial Moctezuma</p>
+                                <p>
+                                    <a class="text-decoration-none text-white" href="./Articles.html">Articles</a>
+                                </p>
+                                <p>Disclaimer</p>
+                                <p>
+                                    <a class="text-decoration-none text-white" href="./Term.html">T&amp;Cs</a>
+                                </p>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-5" style="display: flex; align-self: flex-end; padding-left: 20px;">
+                        <p>ARUME © 2024. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
 
 <script type="text/javascript">
-  const menus = ["vulnerability-prevention", "weak-solutions", "strong-solutions", "conclusion", "links"];
-  for (var i = 0; i < menus.length; i++) {
-    register(menus[i]);
-  };
+    const menus = ["vulnerability-prevention", "weak-solutions", "strong-solutions", "conclusion", "links"];
+    for (var i = 0; i < menus.length; i++) {
+        register(menus[i]);
+    }
 
-  function register(menu) {
-    const button = document.getElementById(menu + "-button");
-    button.addEventListener("click", () => handleOnCLickedFor(menu), false);
-  }
+    function register(menu) {
+        const button = document.getElementById(menu + "-button");
+        button.addEventListener("click", () => handleOnCLickedFor(menu), false);
+    }
 
-  function handleOnCLickedFor(menu) {
-    resetMenus();
-    document.getElementById(menu + "-button").classList.add("menu-item-selected");
-  }
+    function handleOnCLickedFor(menu) {
+        resetMenus();
+        document.getElementById(menu + "-button").classList.add("menu-item-selected");
+    }
 
-  function resetMenus() {
-    const boldedMenuItems = document.getElementsByClassName("menu-item-selected");
-    for (var i = 0; i < boldedMenuItems.length; i++) {
-      boldedMenuItems[i].classList.remove("menu-item-selected");
-    };
-  }
+    function resetMenus() {
+        const boldedMenuItems = document.getElementsByClassName("menu-item-selected");
+        for (var i = 0; i < boldedMenuItems.length; i++) {
+            boldedMenuItems[i].classList.remove("menu-item-selected");
+        }
+    }
 </script>
