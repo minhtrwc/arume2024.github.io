@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="TSA Team">
+    <meta name="generator" content="TSA">
+    <title>Report Site</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./files/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/header.css" rel="stylesheet">
+    <script src="./script/jquery-3.7.1.min"></script>
+    <script src="./script/bootstrap.js"></script>
+
+<meta name="theme-color" content="#7952b3">
+
+<style>
+  footer p {
+    margin: 0px;
+    font-size: 16;
+  }
+  body {
+      display: flex;
+      flex-direction: column;
+      min-height: 200vh;
+  }
+  .content {
+      flex: 1;
+      min-height: 120vh;
+  }
+  .footer {
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 10px 0;
+  }
+  .main-form {
+    position: absolute;
+    left: 35%;
+    width: 30%;
+    top: 42vw;
+  }
+  .content-top-title {
+    padding-left: 8%;
+    /* font-size: 96px; */
+    font-size: 6.78vw;
+    font-weight: 700;
+    /* line-height: 96px; */
+    line-height: 6.78vw;
+    letter-spacing: -0.02em;
+    text-align: left;
+    /* padding-top: 60px; */
+    padding-top: 7vw;
+    /* padding-bottom: 40px; */
+    padding-bottom: 2.8vw;
+
+    p {
+      margin-bottom: 0px;
+    }
+  }
+  .content-top-content {
+    padding-left: 8%;
+    /* font-size: 24px; */
+    font-size: 1.69vw;
+    font-weight: 400;
+    /* line-height: 28px; */
+    line-height: 1.97vw;
+    letter-spacing: 0em;
+    text-align: left;
+    p {
+      margin-bottom: 0px;
+    }
+  }
+  .row-background { 
+      background-image: url('./files/sub-header.png');
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      width: 100%;
+      /* height: 700px; */
+      height: 49.5vw;
+      margin-top: 82px !important;
+  }
+  .display-error {
+    display: block;
+    color: red;
+  }
+  .hide-error {
+    display: none;
+    color: red;
+  }
+
+  .report-form {
+    margin: 50px;
+    font-size: medium;
+  }
+  @media screen and (max-width: 429px) {
+    body {
+      min-height: 120vh;
+    }
+    .main-form {
+      left: 10%;
+      width: 80%;
+      top: 56vw;
+    }
+    .report-form {
+      margin: 0px !important;
+    }
+  }
+  @media screen and (min-width: 430px) and (max-width: 577px){
+    body {
+      min-height: 120vh;
+    }
+    .main-form {
+      left: 10%;
+      width: 80%;
+      top: 53vw;
+    }
+    .report-form {
+      margin: 0px;
+    }
+  }
+  @media screen and (min-width: 578px) and (max-width: 768px) {
+    body {
+      min-height: 120vh;
+    }
+    .main-form {
+      left: 15%;
+      width: 70%;
+      top: 48vw;
+    }
+    .report-form {
+      margin: 0px;
+    }
+  }
+  @media screen and (min-width: 769px) and (max-width: 992px) {
+    body {
+      min-height: 120vh;
+    }
+    .main-form {
+      left: 17%;
+      width: 66%;
+      top: 45vw;
+    }
+    .report-form {
+      margin: 0px;
+    }
+  }
+  @media screen and (min-width: 993px) and (max-width: 1090px) {
+    body {
+      min-height: 100vh;
+    }
+    .main-form {
+      top: 43vw;
+    }
+  }
+</style>
+</head>
+
+<body class="body">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <a class="company-icon" href="./Home.html">
+      <img class="d-none d-sm-block" src="./files/trade-mark.svg" height="48.4px">
+      <img class="d-block d-sm-none" src="./files/logo.svg" height="48.4px">
+    </a> 
+    <button type="button" class="btn btn-danger me-2 py-2 report-button report-button-xs d-block d-md-none" onclick="location.href = './Report.html'">
+      Report
+    </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Vulnerability.html">VULNERABILITY</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Solutions.html">SOLUTIONS</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Articles.html">ARTICLES</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./About.html">ABOUT</a>
+        <button type="button" class="btn btn-danger me-2 py-2 report-button d-none d-md-block" onclick="location.href = './Report.html'">
+          Report
+        </button>
+    </div>
+  </nav>
+	
+	<main  class="content">
+    <div class="row-background">
+      <div class="text-white content-top-title">
+        <p>Defend Infrastructure.</p>
+        <p>Defend Freedom.</p>
+      </div>
+      <div class="text-white content-top-content">
+        <p>Safeguarding critical systems is key to our nation’s resilience.</p>
+        <p>Report all exposure attempts through the form below. It is the</p>
+        <p>mandatory duty of owners to disclose attacks to help secure</p>
+        <p>our nation's critical infrastructure.</p>
+      </div>
+    </div>
+
+    <div class="main-form shadow-lg p-3 mb-5 bg-body rounded">
+      <form class="report-form" name="reportForm" action="./Home.html">
+       <center>
+        <img class="img-fluid" src="./files/logo.svg" style="margin-bottom: 20px;">
+        <p style="line-height: 1;">#12334</p>
+        <h1 style="margin-top: -20px; margin-bottom: 20px;">Site Report Submitted!</h1>
+        <p style="margin-bottom: 3rem;">
+          Thank you for reporting the cyber attack on your site and <br>contributing to the safety of our nations security.<br><br>
+          We understand the criticality of this situation and are <br>committed to offering support to recover and protect your site.<br><br>
+          If you have any further questions or concerns, please reach <br>out to our support team at <a href="mailto:support@arume.org">support@arume.org</a>
+        </p>
+        <button id="submitButton" type="submit" class="btn btn-outline-danger">Go Home</button>
+       </center>
+      </form>
+    </div>
+    
+	</main>
+	
+	<footer id="footer" style="display: block; width: 100%" class="footer-bs bg-dark text-white">
+    <div class="container" style="padding-top: 10px; padding-bottom: 10px;">
+      <div class="row">
+        <div class="col-12 col-sm-7">
+          <div class="row">
+            <div class="col-sm-6 col-md-5" style="padding-left: 20px;">
+              <p style="font-size: 24; font-weight: 500;">ARUME</p>
+              <p style="font-weight: 600;">Contact us</p>
+              <a href="mailto:support@arume.org">support@arume.org</a>
+            </div>
+            <div class="col-sm-6 col-md-7" style="padding-left: 20px;">
+              <br>
+              <br>
+              <p>
+                <a class="text-decoration-none" style="color: #FF000C;" href="./Report.html">Report Attack</a>
+              </p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Vulnerability.html">Station Vulnerability</a>
+              </p>
+              <p>Centro comercial Moctezuma</p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Articles.html">Articles</a>
+              </p>
+              <p>Disclaimer</p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Term.html">T&amp;Cs</a>
+              </p>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-5" style="display: flex;align-self: flex-end; padding-left: 20px;">
+          <p>ARUME © 2024. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

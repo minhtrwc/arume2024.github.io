@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="TSA Team">
+  <meta name="generator" content="TSA">
+  <title>ARUME project</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./files/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/ultil.css" rel="stylesheet">
+  <link href="./css/modal.css" rel="stylesheet">
+  <link href="./css/search-validation.css" rel="stylesheet">
+  <link href="./css/header.css" rel="stylesheet">
+  <script src="./script/jquery-3.7.1.min"></script>
+  <script src="./script/bootstrap.js"></script>
+  
+  <meta name="theme-color" content="#7952b3">
+  <!-- Custom styles for this template -->
+  <!-- <link href="./files/customscss.css" rel="stylesheet"> -->
+  <style>
+    p {
+      margin: 0px;
+      font-size: 16px;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .footer {
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .search-result {
+      margin-left: 5%;
+      font-weight: 700;
+      font-size: xx-large;
+    }
+
+    .open-popup-button {
+      cursor: pointer;
+    }
+
+    table {
+      width: 90%;
+      margin-left: 5%;
+    }
+
+    th {
+      background-color: black;
+       color: white;
+       padding: 5px;
+    }
+
+    tr {
+      border-bottom-width: 1px;
+      border-bottom-color: #B1B5C3;
+    }
+
+    td {
+      padding: 15px 0px;
+    }
+
+    td div {
+      padding: 5px;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .inspect-button {
+      width: 162px;
+      height: 54px;
+      border-radius: 8px;
+      border: 1px;
+      gap: 8px;
+      border: 1px solid #FF000C;
+      box-shadow: 0px 1px 2px 0px #1018280D;
+      background-color: white;
+    }
+
+    .pagination {
+      display: inline-block;
+      display: inline-block;
+      padding-top: 20px;
+      padding-left: 5%;
+      padding-bottom: 50px;
+    }
+
+    .pagination a {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+
+    .pagination a.active {
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+      cursor: default;
+    }
+
+    .pagination a:hover:not(.active) {
+      background-color: #ddd;
+      border-radius: 5px;
+    }
+
+    .no-result p {
+      font-size: 24px;
+      font-weight: 400;
+      color: #181818;
+    }
+
+    .no-result ul {
+      font-size: 24px;
+      font-weight: 400;
+      color: #181818;
+    }
+  </style>
+</head>
+
+<body class="body">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <a class="company-icon" href="./Home.html">
+      <img class="d-none d-sm-block" src="./files/trade-mark.svg" height="48.4px">
+      <img class="d-block d-sm-none" src="./files/logo.svg" height="48.4px">
+    </a> 
+    <button type="button" class="btn btn-danger me-2 py-2 report-button report-button-xs d-block d-md-none" onclick="location.href = './Report.html'">
+      Report
+    </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Vulnerability.html">VULNERABILITY</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Solutions.html">SOLUTIONS</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Articles.html">ARTICLES</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./About.html">ABOUT</a>
+        <button type="button" class="btn btn-danger me-2 py-2 report-button d-none d-md-block" onclick="location.href = './Report.html'">
+          Report
+        </button>
+    </div>
+  </nav>
+
+  <main class="content mt-5">
+    <label id="searchKeyValue" class="d-none">Kwik</label>
+    <label id="totalResultValue" class="d-none">20</label>
+    <label id="ipAddressValue" class="d-none">192.0.2.1</label>
+    <label id="portValue" class="d-none">10001</label>
+    <label id="currentPageValue" class="d-none">2</label>
+    <label id="maxPageValue" class="d-none">5</label>
+    <div id="howFindModal" class="modal">
+      <div class="modal-content"
+        style="border-radius: 12px;padding: 24px;box-shadow: 0px 8px 8px -4px rgba(16, 24, 40, 0.03), 0px 20px 24px -4px rgba(16, 24, 40, 0.08);">
+        <div>
+          <h6 class="modal-title">How do I find my site?</h6>
+          <p>You can search our database by site address, tank gauge banner (example below), by branded oil company
+            (e.g. Shell, BP). Or if you know your site’s IP address or domain name you can use our internet search.</p>
+          <img src="./files/ip_address.png" />
+          <p>If your site isn’t displayed in results this does not mean your site is not vulnerable. It is recommended
+            that all owner/operators of sites using tank gauges check back as we update the list of vulnerable sites
+            regularly.</p>
+        </div>
+        <center class="close"
+          style="font-weight: 600;font-size: 16px;line-height: 24px;border-radius: 8px;padding: 10px 18px;color: #344054;">
+          Okay</center>
+      </div>
+    </div>
+    <div style="width:100%">
+      <div class="mb-4">
+        <div class="bg-dark" style="width:100%; height:25%">
+          <div class="container pt-3 pb-3">
+            <div class="mb-0 text-white" style="padding-left: 13px;">Database search:</div>
+            <div class="row mb-3">
+              <div class="col-10">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-search"></i></span>
+                  <input id="dbSearchText" type="text" class="form-control"
+                    placeholder="Search by site name, address or oil company name e,g. shell">
+                </div>
+              </div>
+              <div class="col-2">
+                <button id="dbSearchButton" class="btn btn-danger w-100">Search</button>
+              </div>
+            </div>
+
+            <div class="mb-0 text-white" style="padding-left: 13px;">Internet search:</div>
+            <div class="row">
+              <div class="col-7">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-search"></i></span>
+                  <input id="domain" type="text" class="form-control" placeholder="Site IP address or domain name">
+                </div>
+              </div>
+              <div class="col-3">
+                <input id="port" type="text" class="form-control" placeholder="Port # 10001">
+              </div>
+              <div class="col-2">
+                <button id="internetSearchButton" class="btn btn-danger w-100">Search</button>
+              </div>
+            </div>
+            <div class="mb-0 pt-3 text-white">
+              <u><b id="howFindButton" class="open-popup-button">How do i find my site (?)</b></u>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="search-result mb-4">
+        <b id="totalResult" style="color: #FF000C;"></b>
+        <b>vulnerable results for </b>
+        <b id="searchKey" style="color: #FF000C;"></b>
+        <h1 id="ipAddress" style="color: red;"></h1>
+        <h1 id="portSearch" style="color: red;"></h1>
+      </div>
+      <div id="has-result">
+        <div>
+          <div class="p-3 bg-light text-dark" style="width:100%">
+            <center>Vulnerable tank gauges discoverable via Shodan.io search engine. Last updated: 17:22 12.12.2023 (?)
+            </center>
+          </div>
+        </div>
+        <table id="mainTable">
+          <tr>
+            <th style="width: 40%;">STATION INFORMATION</th>
+            <th style="width: 20%;"class="center">TANK VOLUME</th>
+            <th style="width: 20%;"class="center">VULNERABILITY SCORE</th>
+            <th style="width: 20%;"></th>
+          </tr>
+          <tr>
+            <td style="display: none;">red</td>
+            <td>
+              <div>
+                <div class="bold">Whitinsville Gulf</div>
+                <div>119 MAIN ST SUDLERSVILLE MD   21888   Massachusetts</div>
+                <div>Unbranded (toll-free)</div>
+              </div>
+            </td>
+            <td class="center">
+              <p>TANK #1</p>
+              <p>DIESEL</p>
+              <p>7,000 GAL</p>
+              <p>11:24AM</p>
+              <p>12.12.2023</p>
+            </td>
+            <td class="center"><span class="dot">!</span></td>
+            <td><button class="inspect-button" onclick="location.href = './ResultDetail.html?id=1'">Inspect</button></td>
+          </tr>
+          <tr>
+            <td style="display: none;">amber</td>
+            <td>
+              <div>
+                <div class="bold">Whitinsville Gulf</div>
+                <div>119 MAIN ST SUDLERSVILLE MD   21888   Massachusetts</div>
+                <div>Unbranded (toll-free)</div>
+              </div>
+            </td>
+            <td class="center">
+              <p>TANK #1</p>
+              <p>DIESEL</p>
+              <p>7,000 GAL</p>
+              <p>11:24AM</p>
+              <p>12.12.2023</p>
+            </td>
+            <td class="center"><span class="dot">!</span></td>
+            <td><button class="inspect-button" onclick="location.href = './ResultDetail.html?id=2'">Inspect</button></td>
+          </tr>
+          <tr>
+            <td style="display: none;">red</td>
+            <td>
+              <div>
+                <div class="bold">Whitinsville Gulf</div>
+                <div>119 MAIN ST SUDLERSVILLE MD   21888   Massachusetts</div>
+                <div>Unbranded (toll-free)</div>
+              </div>
+            </td>
+            <td class="center">
+              <p>TANK #1</p>
+              <p>DIESEL</p>
+              <p>7,000 GAL</p>
+              <p>11:24AM</p>
+              <p>12.12.2023</p>
+            </td>
+            <td class="center"><span class="dot">!</span></td>
+            <td><button class="inspect-button" onclick="location.href = './ResultDetail.html?id=3'">Inspect</button></td>
+          </tr>
+          <tr>
+            <td style="display: none;">yellow</td>
+            <td>
+              <div>
+                <div class="bold">Whitinsville Gulf</div>
+                <div>119 MAIN ST SUDLERSVILLE MD   21888   Massachusetts</div>
+                <div>Unbranded (toll-free)</div>
+              </div>
+            </td>
+            <td class="center">
+              <p>TANK #1</p>
+              <p>DIESEL</p>
+              <p>7,000 GAL</p>
+              <p>11:24AM</p>
+              <p>12.12.2023</p>
+            </td>
+            <td class="center"><span class="dot">!</span></td>
+            <td><button class="inspect-button" onclick="location.href = './ResultDetail.html?id=4'">Inspect</button></td>
+          </tr>
+          <tr>
+            <td style="display: none;">red</td>
+            <td>
+              <div>
+                <div class="bold">Whitinsville Gulf</div>
+                <div>119 MAIN ST SUDLERSVILLE MD   21888   Massachusetts</div>
+                <div>Unbranded (toll-free)</div>
+              </div>
+            </td>
+            <td class="center">
+              <p>TANK #1</p>
+              <p>DIESEL</p>
+              <p>7,000 GAL</p>
+              <p>11:24AM</p>
+              <p>12.12.2023</p>
+            </td>
+            <td class="center"><span class="dot">!</span></td>
+            <td><button class="inspect-button" onclick="location.href = './ResultDetail.html?id=5'">Inspect</button></td>
+          </tr>
+          <tr>
+            <td style="display: none;">red</td>
+            <td>
+              <div>
+                <div class="bold">Whitinsville Gulf</div>
+                <div>119 MAIN ST SUDLERSVILLE MD   21888   Massachusetts</div>
+                <div>Unbranded (toll-free)</div>
+              </div>
+            </td>
+            <td class="center">
+              <p>TANK #1</p>
+              <p>DIESEL</p>
+              <p>7,000 GAL</p>
+              <p>11:24AM</p>
+              <p>12.12.2023</p>
+            </td>
+            <td class="center"><span class="dot">!</span></td>
+            <td><button class="inspect-button" onclick="location.href = './ResultDetail.html?id=6'">Inspect</button></td>
+          </tr>
+          <tr>
+            <td style="display: none;">red</td>
+            <td>
+              <div>
+                <div class="bold">Whitinsville Gulf</div>
+                <div>119 MAIN ST SUDLERSVILLE MD   21888   Massachusetts</div>
+                <div>Unbranded (toll-free)</div>
+              </div>
+            </td>
+            <td class="center">
+              <p>TANK #1</p>
+              <p>DIESEL</p>
+              <p>7,000 GAL</p>
+              <p>11:24AM</p>
+              <p>12.12.2023</p>
+            </td>
+            <td class="center"><span class="dot">!</span></td>
+            <td><button class="inspect-button" onclick="location.href = './ResultDetail.html?id=7'">Inspect</button></td>
+          </tr>
+        </table>
+        <div id="pagination" class="pagination">
+          <a href="./Result.html?search=Kwik&page=1">&lt;</a>
+          <a href="./Result.html?search=Kwik&page=1">1</a>
+          <a class="active">2</a>
+          <a href="./Result.html?search=Kwik&page=3">3</a>
+          <a href="./Result.html?search=Kwik&page=4">4</a>
+          <a href="./Result.html?search=Kwik&page=5">5</a>
+          <a href="./Result.html?search=Kwik&page=6">6</a>
+          <a href="./Result.html?search=Kwik&page=3">&gt;</a>
+        </div>
+      </div>
+      <div id="no-result" class="no-result container" style="max-width: 100%;margin: 96px 0px;">
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-9">
+            <p style="font-weight: 600;">We did not find any sites matching your current search
+              criteria.</p>
+            <p style="font-weight: 600; color: #FF000C; margin-bottom: 40px;">This does not necessarily mean your site is secure.
+            </p>
+            <p>A few things could cause no results:</p>
+            <ul>
+              <li>You may need to try different search terms or parameters to find results.</li>
+              <li>The current scanner is limited and some sites could still be vulnerable despite not appearing in our
+                results.</li>
+              <li>Your sites may be password protected. In the future, we aim to allow checking if your specific sites are
+                properly password protected.</li>
+            </ul>
+            <p style="margin-top: 40px;">Check back often as more vulnerable sites are found each day.</p>
+          </div>
+          <div class="col-2"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+	<footer id="footer" style="display: block; width: 100%" class="footer-bs bg-dark text-white">
+    <div class="container" style="padding-top: 10px; padding-bottom: 10px;">
+      <div class="row">
+        <div class="col-12 col-sm-7">
+          <div class="row">
+            <div class="col-sm-6 col-md-5" style="padding-left: 20px;">
+              <p style="font-size: 24; font-weight: 500;">ARUME</p>
+              <p style="font-weight: 600;">Contact us</p>
+              <a href="mailto:support@arume.org">support@arume.org</a>
+            </div>
+            <div class="col-sm-6 col-md-7" style="padding-left: 20px;">
+              <br>
+              <br>
+              <p>
+                <a class="text-decoration-none" style="color: #FF000C;" href="./Report.html">Report Attack</a>
+              </p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Vulnerability.html">Station Vulnerability</a>
+              </p>
+              <p>Centro comercial Moctezuma</p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Articles.html">Articles</a>
+              </p>
+              <p>Disclaimer</p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Term.html">T&amp;Cs</a>
+              </p>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-5" style="display: flex;align-self: flex-end; padding-left: 20px;">
+          <p>ARUME © 2024. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+<script src="./script/modal.js"></script>
+<script src="./script/search-validation.js"></script>
+<script type="text/javascript">
+  document.getElementById("howFindButton").addEventListener("click", () => openPopup("howFindModal"));
+
+  updatSearchKey();
+  updateTotalResult();
+  buildPagination();
+
+  var table = document.getElementById("mainTable");
+  for (var i = 0, row; row = table.rows[i]; i++) {
+    if (row.cells[0].innerText === 'amber') {
+      row.cells[3].innerHTML = '<span class="dot background-amber">!</span>';
+    }
+    if (row.cells[0].innerText === 'yellow') {
+      row.cells[3].innerHTML = '<span class="dot background-yellow">!</span>';
+    }
+    if (row.cells[0].innerText === 'red') {
+      row.cells[3].innerHTML = '<span class="dot background-red">!</span>';
+    }
+  }
+
+  function updateTotalResult() {
+    const totalResult = document.getElementById("totalResultValue").textContent;
+    document.getElementById("totalResult").textContent = totalResult;
+
+    if (totalResult === "0") {
+      document.getElementById("no-result").classList.remove("d-none");
+      document.getElementById("has-result").classList.add("d-none");
+    } else {
+      document.getElementById("no-result").classList.add("d-none");
+      document.getElementById("has-result").classList.remove("d-none");
+    }
+  }
+
+  function updatSearchKey() {
+    const searchKey = document.getElementById("searchKeyValue").textContent;
+    if (searchKey) {
+      document.getElementById("searchKey").textContent = "`"+searchKey+"`";
+    } else {
+      const ipAddress = document.getElementById("ipAddressValue").textContent;
+      const port = document.getElementById("portValue").textContent;
+      document.getElementById("ipAddress").textContent = ipAddress;
+      document.getElementById("portSearch").textContent = "#"+port;
+    }
+  }
+
+  function buildPagination() {
+    const currentPage = Number(document.getElementById("currentPageValue").textContent);
+    const maxPage = Number(document.getElementById("maxPageValue").textContent);
+    if (currentPage && maxPage) {
+      const pagination = document.getElementById("pagination");
+      paginationHTML = '';
+      if (currentPage !== 1) {
+        paginationHTML += buildPaginationHtml("&lt", currentPage - 1);
+      }
+
+      for (var i = 1; i <= maxPage; i++) {
+        if (i === currentPage) {
+          paginationHTML += buildCurrentPaginationHtml(i);
+        } else {
+          paginationHTML += buildPaginationHtml(i, i);
+        }
+      }
+
+      if (currentPage !== maxPage) {
+        paginationHTML += buildPaginationHtml("&gt", currentPage + 1);
+      }
+
+      pagination.innerHTML = paginationHTML;
+    }
+  }
+
+  function buildCurrentPaginationHtml(text) {
+    return `<a class="active">${text}</a>`;
+  }
+
+  function buildPaginationHtml(text, page) {
+    const searchKey = document.getElementById("searchKeyValue").textContent;
+    if (searchKey) {
+      return `<a href="./Result.html?search=${searchKey}&page=${page}">${text}</a>`;
+    } else {
+      const ipAddress = document.getElementById("ipAddressValue").textContent;
+      const port = document.getElementById("portValue").textContent;
+      return `<a href="./Result.html?domain=${ipAddress}&port=${port}&page=${page}">${text}</a>`;
+    }
+  }
+</script>

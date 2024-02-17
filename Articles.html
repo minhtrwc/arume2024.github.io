@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="TSA Team">
+  <meta name="generator" content="TSA">
+  <title>ARUME project</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./files/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/header.css" rel="stylesheet">
+  <script src="./script/jquery-3.7.1.min"></script>
+  <script src="./script/bootstrap.js"></script>
+
+  <meta name="theme-color" content="#7952b3">
+  <!-- Custom styles for this template -->
+  <style>
+    footer p {
+      margin: 0px;
+      font-size: 16;
+    }
+
+    p {
+      margin: 0px;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .footer {
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    @media screen and (max-width: 767px) {
+      .page-title-top-padding {
+        height: 11.5vh !important;
+      }
+    }
+
+    .content-title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #141418;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+
+    .content-description {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      color: #141418;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <a class="company-icon" href="./Home.html">
+      <img class="d-none d-sm-block" src="./files/trade-mark.svg" height="48.4px">
+      <img class="d-block d-sm-none" src="./files/logo.svg" height="48.4px">
+    </a>
+    <button type="button" class="btn btn-danger me-2 py-2 report-button report-button-xs d-block d-md-none"
+      onclick="location.href = './Report.html'">
+      Report
+    </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Vulnerability.html">VULNERABILITY</a>
+      <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Solutions.html">SOLUTIONS</a>
+      <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Articles.html">ARTICLES</a>
+      <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./About.html">ABOUT</a>
+      <button type="button" class="btn btn-danger me-2 py-2 report-button d-none d-md-block"
+        onclick="location.href = './Report.html'">
+        Report
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container" style="padding: 0px;background-color: black;max-width: 100%;">
+      <div class="page-title-top-padding" style="height: 8.5vh;"></div>
+      <div class="row" style="height: 18.2vw;align-items: center;justify-content: center;">
+        <p class="col-11 col-sm-10 col-md-9"
+          style="color: white;font-weight: 700;font-size: 5vw;line-height: 5vw;text-align: left;">Articles</p>
+      </div>
+    </div>
+    <div class="container"
+      style="max-width: 100%;background-image: linear-gradient(to bottom, black 0px, black 18.2vw, white 18.2vw);padding: 0px;">
+      <div class="row">
+        <center>
+          <div class="col-12 col-sm-10 col-md-8 content-list" style="background-color: white; padding: 3% 2%;">
+            <form id="submit-form-1" action="./ArticleDetail.html">
+              <input type="hidden" value="1" name="item-id"></input>
+              <div class="content-item" onclick="document.forms['submit-form-1'].submit()"
+                style="padding: 2%; border-style: solid; border-color: gray; border-width: 0.5px; margin-bottom: 16px;">
+                <img
+                  src="https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  alt="W3Schools.com" style="width: 100%; margin-bottom: 16px;">
+                <p class="content-title">
+                  Donec id dolor in erat imperdiet</p>
+                <p class="content-description">Nov 22, 2016</p>
+                <p class="content-description">Lorem ipsum dolor sit amet,
+                  consectetur
+                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                  enim
+                  ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                  eu
+                  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                  officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </form>
+            <form id="submit-form-2" action="./ArticleDetail.html">
+              <input type="hidden" value="2" name="item-id"></input>
+              <div class="content-item" onclick="document.forms['submit-form-2'].submit()"
+                style="padding: 2%; border-style: solid; border-color: gray; border-width: 0.5px; margin-bottom: 16px;">
+                <img
+                  src="https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  alt="W3Schools.com" style="width: 100%; margin-bottom: 16px;">
+                <p class="content-title">
+                  Donec id dolor in erat imperdiet</p>
+                <p class="content-description">Nov 22, 2016</p>
+                <p class="content-description">Lorem ipsum dolor sit amet,
+                  consectetur
+                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                  enim
+                  ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                  eu
+                  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                  officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </form>
+            <form id="submit-form-3" action="./ArticleDetail.html">
+              <input type="hidden" value="3" name="item-id"></input>
+              <div class="content-item" onclick="document.forms['submit-form-3'].submit()"
+                style="padding: 2%; border-style: solid; border-color: gray; border-width: 0.5px; margin-bottom: 16px;">
+                <img
+                  src="https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  alt="W3Schools.com" style="width: 100%; margin-bottom: 16px;">
+                <p class="content-title">
+                  Donec id dolor in erat imperdiet</p>
+                <p class="content-description">Nov 22, 2016</p>
+                <p class="content-description">Lorem ipsum dolor sit amet,
+                  consectetur
+                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                  enim
+                  ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                  eu
+                  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                  officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </form>
+            <form id="submit-form-4" action="./ArticleDetail.html">
+              <input type="hidden" value="4" name="item-id"></input>
+              <div class="content-item" onclick="document.forms['submit-form-4'].submit()"
+                style="padding: 2%; border-style: solid; border-color: gray; border-width: 0.5px; margin-bottom: 16px;">
+                <img
+                  src="https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  alt="W3Schools.com" style="width: 100%; margin-bottom: 16px;">
+                <p class="content-title">
+                  Donec id dolor in erat imperdiet</p>
+                <p class="content-description">Nov 22, 2016</p>
+                <p class="content-description">Lorem ipsum dolor sit amet,
+                  consectetur
+                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                  enim
+                  ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                  eu
+                  fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                  officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </form>
+          </div>
+        </center>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer" style="display: block; width: 100%" class="footer-bs bg-dark text-white">
+    <div class="container" style="padding-top: 10px; padding-bottom: 10px;">
+      <div class="row">
+        <div class="col-12 col-sm-7">
+          <div class="row">
+            <div class="col-sm-6 col-md-5" style="padding-left: 20px;">
+              <p style="font-size: 24; font-weight: 500;">ARUME</p>
+              <p style="font-weight: 600;">Contact us</p>
+              <a href="mailto:support@arume.org">support@arume.org</a>
+            </div>
+            <div class="col-sm-6 col-md-7" style="padding-left: 20px;">
+              <br>
+              <br>
+              <p>
+                <a class="text-decoration-none" style="color: #FF000C;" href="./Report.html">Report Attack</a>
+              </p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Vulnerability.html">Station Vulnerability</a>
+              </p>
+              <p>Centro comercial Moctezuma</p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Articles.html">Articles</a>
+              </p>
+              <p>Disclaimer</p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Term.html">T&amp;Cs</a>
+              </p>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-5" style="display: flex;align-self: flex-end; padding-left: 20px;">
+          <p>ARUME © 2024. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>

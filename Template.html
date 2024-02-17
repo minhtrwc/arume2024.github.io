@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="TSA Team">
+    <meta name="generator" content="TSA">
+    <title>ARUME project</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./files/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/modal.css" rel="stylesheet">
+    <link href="./css/header.css" rel="stylesheet">
+    <script src="./script/jquery-3.7.1.min"></script>
+    <script src="./script/bootstrap.js"></script>
+
+<meta name="theme-color" content="#7952b3">
+
+<style>
+  footer p {
+    margin: 0px;
+    font-size: 16;
+  }
+  body {
+    font-family: Inter;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .content {
+    flex: 1;
+  }
+  .footer {
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+</style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <a class="company-icon" href="./Home.html">
+      <img class="d-none d-sm-block" src="./files/trade-mark.svg" height="48.4px">
+      <img class="d-block d-sm-none" src="./files/logo.svg" height="48.4px">
+    </a> 
+    <button type="button" class="btn btn-danger me-2 py-2 report-button report-button-xs d-block d-md-none" onclick="location.href = './Report.html'">
+      Report
+    </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Vulnerability.html">VULNERABILITY</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Solutions.html">SOLUTIONS</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Articles.html">ARTICLES</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./About.html">ABOUT</a>
+        <button type="button" class="btn btn-danger me-2 py-2 report-button d-none d-md-block" onclick="location.href = './Report.html'">
+          Report
+        </button>
+    </div>
+  </nav>
+	
+	<main class="content mt-5"><div class="wrapper">
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content"
+        style="border-radius: 12px;padding: 24px;box-shadow: 0px 8px 8px -4px rgba(16, 24, 40, 0.03), 0px 20px 24px -4px rgba(16, 24, 40, 0.08);">
+        <div>
+          <h6 class="modal-title">title</h6>
+          <p>content</p>
+        </div>
+        <center class="close"
+          style="font-weight: 600;font-size: 16px;line-height: 24px;border-radius: 8px;padding: 10px 18px;color: #344054;">
+          Okay</center>
+      </div>
+    </div>
+    <button id="myBtn">Open Modal</button>
+	</main>
+	
+	<footer id="footer" style="display: block; width: 100%" class="footer-bs bg-dark text-white">
+    <div class="container" style="padding-top: 10px; padding-bottom: 10px;">
+      <div class="row">
+        <div class="col-12 col-sm-7">
+          <div class="row">
+            <div class="col-sm-6 col-md-5" style="padding-left: 20px;">
+              <p style="font-size: 24; font-weight: 500;">ARUME</p>
+              <p style="font-weight: 600;">Contact us</p>
+              <a href="mailto:support@arume.org">support@arume.org</a>
+            </div>
+            <div class="col-sm-6 col-md-7" style="padding-left: 20px;">
+              <br>
+              <br>
+              <p>
+                <a class="text-decoration-none" style="color: #FF000C;" href="./Report.html">Report Attack</a>
+              </p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Vulnerability.html">Station Vulnerability</a>
+              </p>
+              <p>Centro comercial Moctezuma</p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Articles.html">Articles</a>
+              </p>
+              <p>Disclaimer</p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Term.html">T&amp;Cs</a>
+              </p>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-5" style="display: flex;align-self: flex-end; padding-left: 20px;">
+          <p>ARUME © 2024. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+<script src="./script/modal.js"></script>
+<script type="text/javascript">
+  document.getElementById("myBtn").addEventListener("click", () => openPopup("myModal"));
+</script>

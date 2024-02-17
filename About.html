@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="TSA Team">
+    <meta name="generator" content="TSA">
+    <title>ARUME project</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./files/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/header.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <script src="./script/jquery-3.7.1.min"></script>
+    <script src="./script/bootstrap.js"></script>
+
+<meta name="theme-color" content="#7952b3">
+
+<style>
+  footer p {
+    margin: 0px;
+    font-size: 16;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .content {
+    flex: 1;
+  }
+  .footer {
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .about-main {
+    border-radius: 11px;
+    border: 2px solid #E0E6ED;
+    box-shadow: 0px 7px 14px 0px #FF000C66;
+  }
+  .menu-item-selected {
+    font-weight: bold;
+    color: black;
+  }
+  .content-display {
+    display: block;
+  }
+  .content-not-display {
+    display: none;  
+  }
+  .button {
+    cursor: pointer;
+  }
+  .content-area {
+    margin: 10px;
+    margin-top: 20px;
+  }
+  .redirect-btn {
+    color: #FF000C;
+    font-weight: bold;
+  }
+  
+  p {
+    margin-bottom: 0.4rem !important;
+  }
+
+  h3 {
+    font-weight: 500 !important;
+    font-size: xx-large;
+    margin-bottom: 2rem; 
+    padding-left: 1rem;
+  }
+
+  .menu-left-panel {
+    height: fit-content; 
+    padding: 3px !important;
+    border-right: 1px solid #dee2e6 !important;
+  }
+
+  .button-left {
+    float: left !important;
+    padding-left: 1rem;
+  }
+
+  .button-right {
+    float: right !important;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 576px) {
+      .about-main {
+        width: 80%;
+        margin-left: 2.5rem;
+      }
+      .menu-left-panel {
+        width: 100% !important;
+        border-right: 0px !important;
+        border-bottom: 1px solid #dee2e6 !important;
+      }
+      .img-fluid {
+        scale: 2 !important;
+        margin-left: 2rem !important;
+      }
+      .button-left {
+        padding-left: 0rem !important;
+      }
+  }
+
+  @media screen and (min-width: 577px) and (max-width: 768px) {
+    .about-main {
+        width: 90%;
+        margin-left: 2.5rem;
+      }
+
+      nav {
+        scale: 0.8;
+      }
+
+      .company-icon {
+        padding-left: 0px !important;
+      }
+
+      .report-button {
+        scale: 0.8;
+        margin-left: -1.5rem;
+      }
+  }
+  
+
+  @media screen and (min-width: 769px) {
+    .about-main {
+        width: 95%;
+        margin-left: 2rem;
+      }
+  }
+
+</style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <a class="company-icon" href="./Home.html">
+      <img class="d-none d-sm-block" src="./files/trade-mark.svg" height="48.4px">
+      <img class="d-block d-sm-none" src="./files/logo.svg" height="48.4px">
+    </a> 
+    <button type="button" class="btn btn-danger me-2 py-2 report-button report-button-xs d-block d-md-none" onclick="location.href = './Report.html'">
+      Report
+    </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Vulnerability.html">VULNERABILITY</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Solutions.html">SOLUTIONS</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Articles.html">ARTICLES</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./About.html">ABOUT</a>
+        <button type="button" class="btn btn-danger me-2 py-2 report-button d-none d-md-block" onclick="location.href = './Report.html'">
+          Report
+        </button>
+    </div>
+  </nav>
+	
+	<main class="content mt-5">
+    <div class="container pt-xxl-5 mt-xxl-5 pb-xl-5 mb-xxl-5">
+      <div class="row" style="margin-top:5rem; margin-bottom: 5rem">
+        <div class="col-3"></div>
+        <div class="col-7 about-main page-body">
+          <div class="row content-area" style="padding-top: 2rem">
+            <!-- Menu -->
+            <div class="col-2 menu-left-panel">
+              <div class="border-bottom" style="padding-bottom: 1rem;">
+                <p style="color:#FF000C; font-weight: 600; padding-bottom: 1rem;">About ARUME</p>
+                <p id="menu_who" class="menu-item-selected button button_who">Who We Are</p>
+                <p id="menu_mission" class="button button_mission">Our Mission</p>
+                <p id="menu_why" class="button button_why">Why Now?</p>
+              </div>
+              <div>
+                <p style="color:#FF000C; font-weight: 600; padding-top: 0.3rem; padding-bottom: 1rem;">Get Involved</p>
+                <p id="menu_sponsorship" class="button button_sponsorship">Sponsorship</p>
+                <p id="menu_participate" class="button button_participate">Participate</p>
+                <p id="menu_advertising" class="button button_advertising" style="padding-bottom: 5rem;">Advertising</p>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="col-10">
+              <div id="content_who" class="content-display" style="padding-left: 1rem">
+                <div class="row" style="align-items: flex-end; padding-top: 1rem;">
+                  <div class="col-md-5">
+                    <h3>Who we are</h3>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-4" style="text-align: center;">
+                    <img class="img-fluid" src="./files/logo.svg" style="scale: 0.9; margin-bottom: 2rem; ">
+                  </div>
+                </div>
+                
+                <div class="row" style="margin-bottom: 2rem; padding-left: 1rem;">
+                  <p style="margin-top: 1rem; padding-right: 1rem;">We are concerned individuals who are committed to action where inaction could lead to grave harm to our nation.</p>
+                  <p style="margin-top: 1rem; padding-right: 1rem;">As security professionals, engineers and community advocates passionate about both cyber defenses and civic duty, we could not stand by as threats to our energy sector grew more pressing yet response fell short.</p>
+                  <p style="margin-top: 1rem; padding-right: 1rem;">United through shared dedication to defense, ARUME works to transform concern for security and sovereignty into proactive defenses for communities nationwide</p>
+                </div>
+                
+                <div class="row button-right">
+                  <p class="button button_mission redirect-btn" >Our Mission</p>
+                </div>
+              </div>
+
+              <div id="content_mission" class="content-not-display" style="padding-left: 1rem">
+                <div class="row" style="align-items: flex-end; padding-top: 1rem;">
+                  <div class="col-md-5">
+                    <h3>Our Mission</h3>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-4" style="text-align: center;">
+                    <img class="img-fluid" src="./files/mission.gif" style="scale: 0.9; margin-bottom: 2rem; ">
+                  </div>
+                </div>
+                
+                <div class="row" style="margin-bottom: 2rem; padding-left: 1rem;">
+                  <p style="color: #FF000C; font-weight: 600; font-size: 15px;">To strengthen national security and resilience by helping safeguard America's critical infrastructure systems.</p>
+                  <p style="margin-top: 1rem; padding-right: 1rem;">It is our vision to help secure the foundations that safeguard American livelihoods, starting by bringing awareness to and fortifying Automatic Tank Gauge (ATG) technology, before moving to address related risks in Industrial Control Systems underpinning critical services.</p>
+                  <P style="margin-top: 1rem; padding-right: 1rem;">By promoting accountability, education and partnership between public and private entities, we hope to achieve greater resilience against evolving cyber dangers that could destabilize our national security and way of life.</p>
+                </div>
+
+                <p class="button button_who redirect-btn button-left" style="padding-left: 1rem; padding-bottom: 2rem;">Who we are</p>
+                <p class="button button_why redirect-btn button-right">Why Now?</p>
+              </div>
+
+              <div id="content_why" class="content-not-display" style="padding-left: 1rem">
+                <div class="row" style="align-items: flex-end; padding-top: 1rem;">
+                  <div class="col-md-5">
+                    <h3>Why Now ?</h3>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-4" style="text-align: center;">
+                    <img class="img-fluid" src="./files/why.gif" style="scale: 0.9; margin-bottom: 2rem; ">
+                  </div>
+                </div>
+                
+                <div class="row" style="margin-bottom: 2rem; padding-left: 1rem;">
+                  <p style="margin-top: 1rem; padding-right: 1rem;">Since 2015 vulnerabilities of ATG systems have gone unaddressed despite early warning and geopolitical threats evolve rapidly alongside technology. Adversaries now have greater means and motive to disrupt critical infrastructure affecting 330 million lives. </p>
+                  <p style="margin-top: 1rem; padding-right: 1rem;">Though government bodies seek to cooperate, fragmented oversight leaves gaps adversaries may exploit. If exposed entry points like ATGs remain unlocked, the potential for economic disruption grows alongside geopolitical tension.</p>
+                </div>
+
+                <p class="button button_mission redirect-btn button-left" style="padding-left: 1rem;">Our Mission</p>
+                <p class="button button_sponsorship redirect-btn button-right" style="padding-bottom: 2rem;">Get Involved</p>
+              </div>
+
+              <div id="content_sponsorship" class="content-not-display" style="padding-left: 1rem">
+                <div class="row" style="align-items: flex-end; padding-top: 1rem;">
+                  <div class="col-md-5">
+                    <h3 style="margin-top: 2.5rem;">Sponsorship</h3>
+                  </div>
+                </div>
+                
+                <div class="row" style="margin-bottom: 2rem; padding-left: 1rem;">
+                  <p style="margin-top: 1rem; padding-right: 1rem;">As an organization dedicated to civic duty, ARUME relies on the generosity of donors to fund our important work. Your contributions directly support broader vulnerability detection, educational campaigns and policy initiatives to strengthen national infrastructure security.</p>
+                  <p style="margin-top: 1rem; padding-right: 1rem;">Sponsors gain recognition through our website and materials while demonstrating leadership on critical issues. With your help, we can fortify defenses against those seeking to disrupt daily life across the United States.</p>
+                  <p style="margin-top: 1rem; padding-right: 1rem; color: #FF000C;"><a style="color: #FF000C; text-decoration: none;" href="mailto:sponsorship@arume.org">Interested in sponsoring ARUME? Contact us.</a> </p>
+                </div>
+                
+                <p class="button button_why redirect-btn button-left" style="padding-bottom: 2rem; padding-left: 1rem;">Why Now ?</p>
+                <p class="button button_participate redirect-btn button-right">Participation</p> 
+              </div>
+
+              <div id="content_participate" class="content-not-display" style="padding-left: 1rem">
+                <div class="row" style="align-items: flex-end; padding-top: 1rem;">
+                  <div class="col-md-5">
+                    <h3 style="margin-top: 2.5rem;">Participation</h3>
+                  </div>
+                </div>
+                
+                <div class="row" style="margin-bottom: 2rem; padding-left: 1rem;">
+                  <p style="margin-top: 1rem; padding-right: 1rem;">ARUME brings together expertise from diverse sectors including cybersecurity, engineering, policy and communications. If you have skills to offer our mission, please get in touch.</p>
+                  <p style="margin-top: 1rem; padding-right: 1rem;">Infrastructure professionals and researchers provide strategic guidance. Writers spread awareness of vulnerabilities and solutions. Students gain experience protecting national security through internships. </p>
+                  <p style="margin-top: 1rem; padding-right: 1rem; color: #FF000C;">Contact <a style="color: #FF000C;" href="mailto:participate@arume.org">participate@arume.org</a> to see how you can get involved.</p>
+                </div>
+                
+                <p class="button button_sponsorship redirect-btn button-left" style="padding-bottom: 2rem; padding-left: 1rem;">Sponsorship</p>
+                <p class="button button_advertising redirect-btn button-right">Advertising</p>
+              </div>
+              
+              <div id="content_advertising" class="content-not-display" style="padding-left: 1rem">
+                <div class="row" style="align-items: flex-end; padding-top: 1rem;">
+                  <div class="col-md-5">
+                    <h3 style="margin-top: 2.5rem;">Advertising</h3>
+                  </div>
+                </div>
+                
+                <div class="row" style="margin-bottom: 2rem; padding-left: 1rem;">
+                  <p style="margin-top: 1rem;">Advertising sponsors reach an industry specific audience dedicated to infrastructure well-being. Ads appear on our vulnerability scanner tools and educational pages.</p>
+                  <p style="margin-top: 1rem;">Premium placements are also available. Advertisers gain visibility while supporting essential work to protect critical systems.</p>
+                  <p style="margin-top: 1rem; color: #FF000C;">Email <a style="color: #FF000C;" href="mailto:ads@arume.org">ads@arume.org</a> for rates and packages.</p>
+                </div>
+                
+                <p class="button button_participate redirect-btn" style="padding-bottom: 2rem; padding-left: 1rem;">Participate</p>   
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-2"></div>
+      </div>
+    </div>
+	</main>
+	
+	<footer id="footer" style="display: block; width: 100%" class="footer-bs bg-dark text-white">
+    <div class="container" style="padding-top: 10px; padding-bottom: 10px;">
+      <div class="row">
+        <div class="col-12 col-sm-7">
+          <div class="row">
+            <div class="col-sm-6 col-md-5" style="padding-left: 20px;">
+              <p style="font-size: 24; font-weight: 500;">ARUME</p>
+              <p style="font-weight: 600;">Contact us</p>
+              <a href="mailto:support@arume.org">support@arume.org</a>
+            </div>
+            <div class="col-sm-6 col-md-7" style="padding-left: 20px;">
+              <br>
+              <br>
+              <p>
+                <a class="text-decoration-none" style="color: #FF000C;" href="./Report.html">Report Attack</a>
+              </p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Vulnerability.html">Station Vulnerability</a>
+              </p>
+              <p>Centro comercial Moctezuma</p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Articles.html">Articles</a>
+              </p>
+              <p>Disclaimer</p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Term.html">T&amp;Cs</a>
+              </p>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-5" style="display: flex;align-self: flex-end; padding-left: 20px;">
+          <p>ARUME © 2024. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+<script type="text/javascript">
+  const menus = ["mission", "who", "why", "sponsorship", "participate", "advertising"];
+  for (var i=0; i < menus.length; i++) {
+    register(menus[i]);
+  };
+
+  function register(menu) {
+    const button_missions = document.getElementsByClassName("button_"+menu);
+    for (var i=0; i < button_missions.length; i++) {
+      button_missions[i].addEventListener("click", () => handleOnCLickedFor(menu), false);
+    };
+  }
+
+  function handleOnCLickedFor(contentName) {
+    resetMenus();
+    document.getElementById("menu_" + contentName).classList.add("menu-item-selected");
+
+    resetContents();
+    const selectedContent = document.getElementById("content_" + contentName);
+    selectedContent.classList.remove("content-not-display");
+    selectedContent.classList.add("content-display");
+  }
+
+  function resetMenus() {
+    const boldedMenuItems = document.getElementsByClassName("menu-item-selected");
+    for (var i=0; i < boldedMenuItems.length; i++) {
+      boldedMenuItems[i].classList.remove("menu-item-selected");
+    };
+  }
+  
+  function resetContents() {
+    const displayContents = document.getElementsByClassName("content-display");
+    for (var i=0; i < displayContents.length; i++) {
+      displayContents[i].classList.add("content-not-display");
+      displayContents[i].classList.remove("content-display");
+    };
+  }
+
+</script>

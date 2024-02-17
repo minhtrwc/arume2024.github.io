@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="TSA Team">
+  <meta name="generator" content="TSA">
+  <title>ARUME project</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./files/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/modal.css" rel="stylesheet">
+  <link href="./css/search-validation.css" rel="stylesheet">
+  <link href="./css/header.css" rel="stylesheet">
+  <script src="./script/jquery-3.7.1.min"></script>
+  <script src="./script/bootstrap.js"></script>
+  
+  <meta name="theme-color" content="#7952b3">
+  <!-- Custom styles for this template -->
+  <!-- <link href="./files/customscss.css" rel="stylesheet"> -->
+  <style>
+    :root {
+      --mainColor: #FF000C;
+    }
+    p {
+      margin: 0px;
+      font-size: 16px;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .footer {
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    @media screen and (min-width: 576px) {
+      .padding-content {
+        height: 250px;
+      }
+    }
+
+    .back-to-result:hover {
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .info {
+        box-shadow: none !important;
+      }
+    }
+
+    @media screen and (max-width: 1200px) {
+      .info-content {
+        border-radius: 12px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding-right: 32px;
+        padding-left: 32px;
+        padding-top: 32px;
+        margin-bottom: 32px;
+        background: white;
+      }
+    }
+
+    @media screen and (max-width: 1200px) {
+      .info-via-kachoolie-full {
+        display: none !important;
+      }
+
+      .info-via-kachoolie-less {
+        display: block !important;
+      }
+    }
+
+
+    @media screen and (max-width: 1200px) {
+      .review-background {
+        background: var(--mainColor) !important;
+      }
+      .result-content {
+        background: linear-gradient(to top, var(--mainColor) 0%, var(--mainColor) 20%, white 20%, white 100%);
+      }
+    }
+
+    .open-popup-button {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body class="body">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <a class="company-icon" href="./Home.html">
+      <img class="d-none d-sm-block" src="./files/trade-mark.svg" height="48.4px">
+      <img class="d-block d-sm-none" src="./files/logo.svg" height="48.4px">
+    </a> 
+    <button type="button" class="btn btn-danger me-2 py-2 report-button report-button-xs d-block d-md-none" onclick="location.href = './Report.html'">
+      Report
+    </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Vulnerability.html">VULNERABILITY</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Solutions.html">SOLUTIONS</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./Articles.html">ARTICLES</a>
+        <a class="me-2 py-2 text-dark nav-link text-decoration-underline" href="./About.html">ABOUT</a>
+        <button type="button" class="btn btn-danger me-2 py-2 report-button d-none d-md-block" onclick="location.href = './Report.html'">
+          Report
+        </button>
+    </div>
+  </nav>
+
+  <main class="content mt-5">
+    <label id="mainColor" style="display: none;">amber</label>
+    <div id="howFindModal" class="modal">
+      <div class="modal-content"
+        style="border-radius: 12px;padding: 24px;box-shadow: 0px 8px 8px -4px rgba(16, 24, 40, 0.03), 0px 20px 24px -4px rgba(16, 24, 40, 0.08);">
+        <div>
+          <h6 class="modal-title">How do I find my site?</h6>
+          <p>You can search our database by site address, tank gauge banner (example below), by branded oil company
+            (e.g. Shell, BP). Or if you know your site’s IP address or domain name you can use our internet search.</p>
+          <img src="./files/ip_address.png" />
+          <p>If your site isn’t displayed in results this does not mean your site is not vulnerable. It is recommended
+            that all owner/operators of sites using tank gauges check back as we update the list of vulnerable sites
+            regularly.</p>
+        </div>
+        <center class="close"
+          style="font-weight: 600;font-size: 16px;line-height: 24px;border-radius: 8px;padding: 10px 18px;color: #344054;">
+          Okay</center>
+      </div>
+    </div>
+    <div style="width:100%">
+      <div class="row mb-4">
+        <div class="bg-dark" style="width:100%; height:25%">
+          <div class="container pt-3 pb-3">
+            <div class="row mb-0 text-white" style="padding-left: 13px;">Database search:</div>
+            <div class="row mb-3">
+              <div class="col-10">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-search"></i></span>
+                  <input id="dbSearchText" type="text" class="form-control"
+                    placeholder="Search by site name, address or oil company name e,g. shell">
+                </div>
+              </div>
+              <div class="col-2">
+                <button id="dbSearchButton" class="btn btn-danger w-100">Search</button>
+              </div>
+            </div>
+
+            <div class="row mb-0 text-white" style="padding-left: 13px;">Internet search:</div>
+            <div class="row">
+              <div class="col-7">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-search"></i></span>
+                  <input id="domain" type="text" class="form-control" placeholder="Site IP address or domain name">
+                </div>
+              </div>
+              <div class="col-3">
+                <input id="port" type="text" class="form-control" placeholder="Port # 10001">
+              </div>
+              <div class="col-2">
+                <button id="internetSearchButton" class="btn btn-danger w-100">Search</button>
+              </div>
+            </div>
+            <div class="row mb-0 pt-3 text-white">
+              <u><b id="howFindButton" class="open-popup-button">How do i find my site (?)</b></u>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-content" style="padding-left: 64px;padding-right: 64px;">
+        <p class="back-to-result" onclick="backToResult();"
+          style="display: inline-block;font-size: 20px;padding-top: 24px;padding-bottom: 16px;"><u>Back to results</u>
+        </p>
+
+        <div class="container">
+          <div class="row">
+            <div class="container info-content col-lg-9 col-xl-12">
+              <div class="row">
+                <div class="col-xl-6"
+                  style="margin-bottom: 32px;padding: 0px;height: 673px;padding-left: 8px;padding-right: 8px;">
+                  <div class="info"
+                    style="height: 533px;margin-bottom: 24px;background-color: white;border-radius: 12px;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                    <div class="map"
+                      style="height: 339px; background-color: gray;border-top-left-radius: 12px;border-top-right-radius: 12px;">
+                      Google map here!!
+                    </div>
+                    <div style="padding: 24px 32px;">
+                      <p style="font-size: 36px;color: #FF000C;font-weight: 700; padding-bottom: 8px;">Whitinsville Gulf
+                      </p>
+                      <p style="font-size: 18px;color: #181818;font-weight: 300;">119 MAIN ST SUDLERSVILLE, MD, 21888
+                      </p>
+                      <p style="font-size: 18px;color: #181818;font-weight: 300;">Massachusetts</p>
+                      <p style="font-size: 18px;color: #181818;font-weight: 300;">Unbranded (toll-free)</p>
+                    </div>
+                  </div>
+                  <p
+                    style="display: flex;background-color: var(--mainColor);padding: 24px;border-radius: 12px;font-size: 24px;color: white;font-weight: 500;max-width: 591px;">
+                    <img src="./files/ic-circle-exclamation.svg"
+                      style="width: 60px;height: 60px;margin-right: 24px;"></img>
+                    <span style="align-self: flex-end;margin-top: auto;margin-bottom: auto;">
+                      <a class="text-decoration-none text-white" href="#site-open-start-session">Site open to the internet </a>
+                    </span>
+                  </p>
+                </div>
+                <div class="kachoolie-data col-xl-6"
+                  style="color: aqua;margin-bottom: 32px;padding: 0px;padding-left: 8px;padding-right: 8px;">
+                  <img class="kachoolie-chart" src="./files/kachoolie-map.png"
+                    style="height: 266px;margin-bottom: 24px;width: 100%;">
+
+                  <p class="info-via-kachoolie-less"
+                    style="display: none;text-align: center;padding-bottom: 32px;color: #667085;">Information via <a
+                      href="Kachoolie.com">Kachoolie.com</a></p>
+                  <img class="kachoolie-log" src="./files/kachoolie-log.png" style="height: 383px;width: 100%;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="info-via-kachoolie-full" style="text-align: center;color: #667085;margin-bottom: 32px;">Information
+          via <a href="Kachoolie.com">Kachoolie.com</a></p>
+      </div>
+
+      <div class="review-background" style="background: linear-gradient(to top, var(--mainColor) 0%, var(--mainColor) 80%, white 80%, white 100%)">
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="review col-lg-8"
+            style="border-radius: 12px;border-color: var(--mainColor); border-style: solid;border-width: 2px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            color: #141418;font-size: 20px;font-weight: 300;padding: 32px 24px;
+            margin-bottom: 32px;background-color: white;">
+            <p style="color: #FF000C;font-size: 48px;font-weight: 700;margin-bottom: 24px;">Vulnerability Review</p>
+            <p style="margin-bottom: 24px;">orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut.</p>
+            <p id="site-open-start-session" style="margin-bottom: 24px;font-weight: 600;font-size: 24px;">Vulnerability Score</p>
+            <p
+              style="display: flex;background-color: var(--mainColor);padding: 24px;border-radius: 12px;font-size: 24px;color: white;font-weight: 500;max-width: 591px;margin-bottom: 32px;">
+              <img src="./files/ic-circle-exclamation.svg" style="width: 60px;height: 60px;margin-right: 24px;"></img>
+              <span style="align-self: flex-end;margin-top: auto;margin-bottom: auto;">Site open to the internet</span>
+            </p>
+            <p style="margin-bottom: 24px;">Your site has been rated a <b style="font-weight: 700;">‘SEVERE’ score for
+                vulnerability</b>. This
+              means that anyone can read your informaiton etc to orem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod tempor incididunt ut.</p>
+            <p style="font-weight: 600;font-size: 24px; margin-bottom: 24px;">Vulnerability Protection</p>
+            <p style="margin-bottom: 24px;">To protect your site we recommend a number of steps you can follow xorem
+              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+              <br /><br />
+              We recommend disconnecting your gauge from the internet until these vulnerabilities have been prevented.
+              Follow the step by step process to get you back online and protected.
+            </p>
+            <button style="background: #FF000C;border-radius: 12px;color: white;padding: 10px 18px;font-size: 18px;font-weight: 800;border: none;">Secure my site</button>
+          </div>
+          <div class="col-lg-2"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+	<footer id="footer" style="display: block; width: 100%" class="footer-bs bg-dark text-white">
+    <div class="container" style="padding-top: 10px; padding-bottom: 10px;">
+      <div class="row">
+        <div class="col-12 col-sm-7">
+          <div class="row">
+            <div class="col-sm-6 col-md-5" style="padding-left: 20px;">
+              <p style="font-size: 24; font-weight: 500;">ARUME</p>
+              <p style="font-weight: 600;">Contact us</p>
+              <a href="mailto:support@arume.org">support@arume.org</a>
+            </div>
+            <div class="col-sm-6 col-md-7" style="padding-left: 20px;">
+              <br>
+              <br>
+              <p>
+                <a class="text-decoration-none" style="color: #FF000C;" href="./Report.html">Report Attack</a>
+              </p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Vulnerability.html">Station Vulnerability</a>
+              </p>
+              <p>Centro comercial Moctezuma</p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Articles.html">Articles</a>
+              </p>
+              <p>Disclaimer</p>
+              <p>
+                <a class="text-decoration-none text-white" href="./Term.html">T&amp;Cs</a>
+              </p>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-5" style="display: flex;align-self: flex-end; padding-left: 20px;">
+          <p>ARUME © 2024. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+<script src="./script/modal.js"></script>
+<script src="./script/search-validation.js"></script>
+<script type="text/javascript">
+  document.getElementById("howFindButton").addEventListener("click", () => openPopup("howFindModal"));
+
+  const mainColor = document.getElementById("mainColor").textContent;
+  if (mainColor === 'yellow')
+    document.querySelector(':root').style.setProperty('--mainColor', '#FFE500');
+  if (mainColor === 'amber')
+    document.querySelector(':root').style.setProperty('--mainColor', '#FF9900');
+
+  function backToResult() {
+    window.location.href = "./Result.html"
+  }
+</script>
